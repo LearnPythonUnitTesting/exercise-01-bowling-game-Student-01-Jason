@@ -12,3 +12,7 @@ def step_impl(context):
     pass
 
 
+@Then('I get {score:d} in the game')
+def step_impl(context, score):
+    s = game.get_score(context.string)
+    assert s == score
